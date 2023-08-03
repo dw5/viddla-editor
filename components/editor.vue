@@ -19,6 +19,7 @@
     <div style="margin-left: auto;">
         ZOOM
     </div>
+    <!-- initzoom=(video.duration / viewport width)/5, howmanytomake=video.duration*(initzoom*thetimeszoomedin) ??-->
   </div>
   <div class="box" id="timeline-box">
     <!-- Sub-timeline for Blur Objects -->
