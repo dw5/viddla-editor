@@ -38,9 +38,9 @@
       <!-- Timeline for audio -->
       <div class="timeline-container">
         <div class="timeline-header">Audio</div>
-        <div class="timeline-audio">
+        <div class="timeline-audio">audio https://github.com/katspaugh/wavesurfer.js yes could support video ref: https://wilsonlmh.github.io/fiveLoadSub/
           <!-- Add your audio waveform canvas or placeholder image here -->
-          <div id="waveform">audio https://github.com/katspaugh/wavesurfer.js yes could support video ref: https://wilsonlmh.github.io/fiveLoadSub/</div>
+          <div id="waveform"></div>
         </div>
       </div>
       <!-- Timeline for video -->
@@ -65,6 +65,7 @@ export default {
 
     // Listen to the 'timeupdate' event of the video player
     videoPlayer.addEventListener('timeupdate', this.updateCurrentTime);
+    this.loadAudioWaveform();
   },
   props: {
     videoUrl: {
@@ -79,14 +80,12 @@ export default {
   },
   methods: {
     async loadAudioWaveform() {
-      const file = this.$refs.videoInput.files[0];
-      const audioURL = URL.createObjectURL(file);
 
       const wavesurfer = WaveSurfer.create({
         container: '#waveform',
-        waveColor: 'violet',
-        progressColor: 'purple',
-        backend: 'MediaElement',
+        waveColor: '#f81337',
+        progressColor: '#000',
+        media: document.querySelector('video'),
       });
 
       await wavesurfer.load(audioURL);
