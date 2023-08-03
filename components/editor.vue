@@ -12,6 +12,14 @@
         <video id="video-player" controls :src="videoUrl" ref="videoPlayer"></video>
     </div>
   </div>
+  <div class="box" id="time-box" style="display: flex;">
+    <div class="feature-buttons">
+        <input id="current-time" v-model="currentTime" @input="updateVideoTime" style="background-color: #111;" autocomplete="off" role="timer" type="text" spellcheck="false" maxlength="7">
+    </div>
+    <div style="margin-left: auto;">
+        ZOOM
+    </div>
+  </div>
   <div class="box" id="timeline-box">
     <!-- Sub-timeline for Blur Objects -->
     <div class="timeline-content-wrapper">
@@ -50,6 +58,13 @@
 <script type="module">
 import WaveSurfer from 'wavesurfer.js';
 export default {
+    mounted() {
+    // Get a reference to the video player element
+    const videoPlayer = this.$refs.videoPlayer;
+
+    // Listen to the 'timeupdate' event of the video player
+    videoPlayer.addEventListener('timeupdate', this.updateCurrentTime);
+  },
   props: {
     videoUrl: {
       type: String,
@@ -75,6 +90,28 @@ export default {
 
       await wavesurfer.load(audioURL);
     },
+    updateCurrentTime(event) {
+
+    function padTime(value) {
+      return value.toString().padStart(2, '0');
+    };
+        
+      const timeInSeconds = event.target.currentTime; //this.videoPlayer.currentTime;
+      const hours = Math.floor(timeInSeconds / 3600);
+      const minutes = Math.floor((timeInSeconds % 3600) / 60);
+      const seconds = Math.floor(timeInSeconds % 60);
+      const frames = Math.floor((timeInSeconds % 1) * 30);
+
+      const formattedTime = padTime(hours) + ':' + padTime(minutes) + ':' + padTime(seconds) + ':' + padTime(frames);
+      
+      // Retrieve the current time from the video player and update the data property
+      this.currentTime = formattedTime;
+    },
+  },
+  data() {
+    return {
+      currentTime: 0,
+    };
   },
 };
 
