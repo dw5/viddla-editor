@@ -126,8 +126,9 @@ export default {
 
     /* Add additional styling for your video player */
     #video-player {
-      flex: 1;
+      /*flex: 1;*/
       height: 400px;
+      margin-left: auto;
     }
 
     .timeline-container{
