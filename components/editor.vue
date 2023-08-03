@@ -15,7 +15,7 @@
   <div class="box" id="timeline-box">
     <!-- Sub-timeline for Blur Objects -->
     <div class="timeline-content-wrapper">
-      <div class="timeline-content-item">
+      <div class="timeline-container">
         <div class="timeline-header">Blurs</div>
         <div class="timeline-content-item">
           <div class="timeline-blur">
@@ -27,15 +27,15 @@
         </div>
       </div>
       <!-- Timeline for audio -->
-      <div class="timeline-content-item">
+      <div class="timeline-container">
         <div class="timeline-header">Audio</div>
         <div class="timeline-audio">
           <!-- Add your audio waveform canvas or placeholder image here -->
-          <div id="waveform"></div>
+          <div id="waveform">audio</div>
         </div>
       </div>
       <!-- Timeline for video -->
-      <div class="timeline-content-item">
+      <div class="timeline-container">
         <div class="timeline-header">Video</div>
         <div class="timeline-video">
           <!-- Add your video object with thumbnails here -->
@@ -130,6 +130,11 @@ export default {
       height: 400px;
     }
 
+    .timeline-container{
+        display:flex;
+        flex-direction:row;
+    }
+
     /* Add your CSS styling for buttons and other elements here */
     .feature-buttons {
       margin-bottom: 10px;
@@ -213,6 +218,7 @@ export default {
       height: 100px;
       margin-bottom: 10px;
 	  background-color:black;
+      width: 100%;
     }
 
     /* Add your CSS for audio waveform canvas or placeholder image here */
@@ -221,18 +227,20 @@ export default {
       height: 80px;
       margin-bottom: 10px;
       background-color:green;
+      width: 100%;
     }
 
     /* Add CSS for timeline header */
     .timeline-header {
       font-weight: bold;
       margin-bottom: 5px;
+      margin-right: 15px;
     }
 
     /* Add CSS for the content wrapper */
     .timeline-content-wrapper {
-      display: flex;
-      flex-wrap: wrap;
+      /*display: flex;
+      flex-wrap: wrap;*/
     }
 
     /* Add CSS for timeline content items */
