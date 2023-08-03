@@ -110,7 +110,7 @@ export default {
   },
   data() {
     return {
-      currentTime: 0,
+      currentTime: '00:00:00:00',
     };
   },
 };
