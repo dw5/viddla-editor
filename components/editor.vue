@@ -107,6 +107,18 @@ export default {
       // Retrieve the current time from the video player and update the data property
       this.currentTime = formattedTime;
     },
+    seekToTime() {
+      if (!this.userInputTime) return;
+
+      // Split the input value into hours, minutes, seconds, and frames
+      const [hours, minutes, seconds, frames] = this.userInputTime.split(':').map(Number);
+
+      // Calculate the total time in seconds based on user input
+      const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds + frames / this.getFramesPerSecond();
+
+      // Update the video player's current time
+      this.videoPlayer.currentTime = totalTimeInSeconds;
+    },
   },
   data() {
     return {
