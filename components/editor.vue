@@ -38,7 +38,7 @@
       <!-- Timeline for audio -->
       <div class="timeline-container">
         <div class="timeline-header">Audio</div>
-        <div class="timeline-audio">audio https://github.com/katspaugh/wavesurfer.js yes could support video ref: https://wilsonlmh.github.io/fiveLoadSub/
+        <div class="timeline-audio">
           <!-- Add your audio waveform canvas or placeholder image here -->
           <div id="waveform"></div>
         </div>
@@ -84,7 +84,7 @@ export default {
       const wavesurfer = WaveSurfer.create({
         container: '#waveform',
         waveColor: '#f81337',
-        progressColor: '#000',
+        progressColor: '#fff',
         media: document.querySelector('video'),
       });
 
@@ -274,7 +274,7 @@ export default {
     /* Add your CSS for audio waveform canvas or placeholder image here */
     .timeline-audio {
       position: relative;
-      height: 80px;
+      height: 128px;
       margin-bottom: 10px;
       background-color:green;
       width: 100%;
