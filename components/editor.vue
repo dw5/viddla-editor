@@ -40,7 +40,7 @@
         <div class="timeline-header">Audio</div>
         <div class="timeline-audio">
           <!-- Add your audio waveform canvas or placeholder image here -->
-          <div id="waveform">audio</div>
+          <div id="waveform">audio https://github.com/katspaugh/wavesurfer.js yes could support video ref: https://wilsonlmh.github.io/fiveLoadSub/</div>
         </div>
       </div>
       <!-- Timeline for video -->
@@ -48,7 +48,7 @@
         <div class="timeline-header">Video</div>
         <div class="timeline-video">
           <!-- Add your video object with thumbnails here -->
-          Video Thumbnails
+          Video Thumbnails https://github.com/Rajesh-Royal/vThumb.js
         </div>
       </div>
     </div>
