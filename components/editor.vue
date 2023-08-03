@@ -178,6 +178,7 @@ export default {
       /*flex: 1;*/
       height: 400px;
       margin-left: auto;
+      max-width:70vw;
     }
 
     .timeline-container{
