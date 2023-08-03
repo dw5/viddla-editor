@@ -17,12 +17,11 @@
     <div class="timeline-content-wrapper">
       <div class="timeline-content-item">
         <div class="timeline-header">Blurs</div>
-        <div class="timeline">
-          <div class="blur-object" style="left: 20px;">Blur 1</div>
-          <div class="sub-timeline">
+        <div class="timeline-content-item">
+          <div class="timeline-blur">
             <div class="blur-object" style="left: 20px;">Blur 2</div>
           </div>
-          <div class="sub-timeline">
+          <div class="timeline-blur">
             <div class="blur-object" style="left: 20px;">Blur 3</div>
           </div>
         </div>
@@ -165,7 +164,6 @@ export default {
     .blur-object {
       position: absolute;
       height: 100%;
-      width: 20px;
       background-color: #007bff;
       color: #fff;
       text-align: center;
@@ -201,6 +199,14 @@ export default {
       cursor: move;
     }
 
+    /* Add your CSS for blur object with thumbnails here */
+    .timeline-blur {
+      position: relative;
+      height: 100px;
+      margin-bottom: 10px;
+	  background-color:rgb(21, 75, 110);
+    }
+
     /* Add your CSS for video object with thumbnails here */
     .timeline-video {
       position: relative;
@@ -214,6 +220,7 @@ export default {
       position: relative;
       height: 80px;
       margin-bottom: 10px;
+      background-color:green;
     }
 
     /* Add CSS for timeline header */
